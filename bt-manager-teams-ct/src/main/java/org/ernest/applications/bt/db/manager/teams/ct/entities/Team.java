@@ -10,9 +10,11 @@ public class Team {
 	
 	private String name;
 	private Set<String> membersIds;
+	private Set<String> stagesCompletedIds;
 	
 	public Team(){
 		membersIds = new HashSet<String>();
+		stagesCompletedIds = new HashSet<String>();
 	}
 	
 	public String get_id() {
@@ -38,7 +40,11 @@ public class Team {
 	}
 	public void setMembersIds(Set<String> membersIds) {
 		this.membersIds = membersIds;
+	}
+	public Set<String> getStagesCompletedIds() {
+		return stagesCompletedIds;
+	}
+	public void setStagesCompletedIds(Set<String> stagesCompletedIds) {
+		this.stagesCompletedIds = stagesCompletedIds;
 	} 
-	
-	
 }

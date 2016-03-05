@@ -31,5 +31,15 @@ public class UpdateController {
 	public void removeMember(@RequestBody UpdateRemoveMemberInput updateRemoveMemberInput) throws UpdateTeamException, RetrieveTeamException {
 		updateService.removeMember(updateRemoveMemberInput);
 	}
+	
+	@RequestMapping("/update/addstagecompleted")
+	public void addStageCompleted(@RequestBody UpdateAddStageCompletedInput updateAddStageCompletedInput) throws UpdateTeamException, RetrieveTeamException {
+		updateService.addStageCompleted(updateAddStageCompletedInput);
+	}
+	
+	@RequestMapping("/update/removestagecompleted")
+	public void removeStageCompleted(@RequestBody UpdateRemoveStageCompleteInput updateRemoveStageCompleteInput) throws UpdateTeamException, RetrieveTeamException {
+		updateService.removeStageCompleted(updateRemoveStageCompleteInput);
+	}
 
 }

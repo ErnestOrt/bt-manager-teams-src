@@ -5,6 +5,8 @@ import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveMemberInput;
 import org.ernest.applications.bt.db.manager.teams.ct.entities.Team;
 import org.ernest.applications.bt.db.manager.teams.ms.Application;
+import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateAddStageCompletedInput;
+import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateRemoveStageCompleteInput;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -66,6 +68,25 @@ public class CrudTest {
 		
 		new RestTemplate().postForObject("http://localhost:"+port+"/update/removemember", updateRemoveMemberInput, String.class);
 		Assert.assertFalse(new RestTemplate().getForObject("http://localhost:"+port+"/retrieve/"+teamIdCreated, Team.class).getMembersIds().contains(newMemberId));
+	}
+	
+	@Test
+	public void updateStageCompleted(){
+		String stageId = "STAGE_COMPLETED_ID_TEST";
+		
+		UpdateAddStageCompletedInput updateAddStageCompletedInput = new UpdateAddStageCompletedInput();
+		updateAddStageCompletedInput.setTeamId(teamIdCreated);
+		updateAddStageCompletedInput.setStageId(stageId);
+		
+		new RestTemplate().postForObject("http://localhost:"+port+"/update/addstagecompleted", updateAddStageCompletedInput, String.class);
+		Assert.assertTrue(new RestTemplate().getForObject("http://localhost:"+port+"/retrieve/"+teamIdCreated, Team.class).getStagesCompletedIds().contains(stageId));
+		
+		UpdateRemoveStageCompleteInput updateRemoveStageCompleteInput = new UpdateRemoveStageCompleteInput();
+		updateRemoveStageCompleteInput.setTeamId(teamIdCreated);
+		updateRemoveStageCompleteInput.setStageId(stageId);
+		
+		new RestTemplate().postForObject("http://localhost:"+port+"/update/removestagecompleted", updateRemoveStageCompleteInput, String.class);
+		Assert.assertFalse(new RestTemplate().getForObject("http://localhost:"+port+"/retrieve/"+teamIdCreated, Team.class).getStagesCompletedIds().contains(stageId));
 	}
 
 }
