@@ -1,12 +1,12 @@
 package org.ernest.applications.bt.db.manager.teams.ms.services;
 
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveMemberInput;
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveStageCompleteInput;
 import org.ernest.applications.bt.db.manager.teams.ct.exceptions.RetrieveTeamException;
 import org.ernest.applications.bt.db.manager.teams.ct.exceptions.UpdateTeamException;
-import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateAddStageCompletedInput;
-import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateRemoveStageCompleteInput;
 
 public interface UpdateService {
 

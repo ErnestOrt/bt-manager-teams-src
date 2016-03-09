@@ -1,7 +1,7 @@
-package org.ernest.applications.bt.db.manager.teams.ms.controllers;
+package org.ernest.applications.bt.db.manager.teams.ct;
 
-public class UpdateRemoveStageCompleteInput {
-
+public class UpdateAddStageCompletedInput {
+	
 	private String stageId;
 	private String teamId;
 	

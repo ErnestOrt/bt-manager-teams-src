@@ -1,12 +1,12 @@
 package org.ernest.application.bt.db.manager.teams.test;
 
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveMemberInput;
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveStageCompleteInput;
 import org.ernest.applications.bt.db.manager.teams.ct.entities.Team;
 import org.ernest.applications.bt.db.manager.teams.ms.Application;
-import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateAddStageCompletedInput;
-import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateRemoveStageCompleteInput;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

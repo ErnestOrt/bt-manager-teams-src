@@ -1,13 +1,13 @@
 package org.ernest.applications.bt.db.manager.teams.ms.services.impl;
 
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveMemberInput;
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveStageCompleteInput;
 import org.ernest.applications.bt.db.manager.teams.ct.entities.Team;
 import org.ernest.applications.bt.db.manager.teams.ct.exceptions.RetrieveTeamException;
 import org.ernest.applications.bt.db.manager.teams.ct.exceptions.UpdateTeamException;
-import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateAddStageCompletedInput;
-import org.ernest.applications.bt.db.manager.teams.ms.controllers.UpdateRemoveStageCompleteInput;
 import org.ernest.applications.bt.db.manager.teams.ms.services.CrudService;
 import org.ernest.applications.bt.db.manager.teams.ms.services.UpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
