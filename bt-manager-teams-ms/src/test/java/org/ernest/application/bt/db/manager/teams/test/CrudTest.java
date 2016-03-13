@@ -1,5 +1,6 @@
 package org.ernest.application.bt.db.manager.teams.test;
 
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddCommentInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
@@ -88,5 +89,16 @@ public class CrudTest {
 		new RestTemplate().postForObject("http://localhost:"+port+"/update/removestagecompleted", updateRemoveStageCompleteInput, String.class);
 		Assert.assertFalse(new RestTemplate().getForObject("http://localhost:"+port+"/retrieve/"+teamIdCreated, Team.class).getStagesCompletedIds().contains(stageId));
 	}
-
+	
+	@Test
+	public void updateAddComment(){
+		String commentId = "COMMENT_ID_TEST";
+		
+		UpdateAddCommentInput updateAddCommentInput = new UpdateAddCommentInput();
+		updateAddCommentInput.setCommentId(commentId);
+		updateAddCommentInput.setTeamId(teamIdCreated);
+		
+		new RestTemplate().postForObject("http://localhost:"+port+"/update/addcomment", updateAddCommentInput, String.class);
+		Assert.assertTrue(new RestTemplate().getForObject("http://localhost:"+port+"/retrieve/"+teamIdCreated, Team.class).getCommentIds().contains(commentId));
+	}
 }

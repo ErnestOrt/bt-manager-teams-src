@@ -1,5 +1,6 @@
 package org.ernest.applications.bt.db.manager.teams.ms.controllers;
 
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddCommentInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
@@ -43,5 +44,9 @@ public class UpdateController {
 	public void removeStageCompleted(@RequestBody UpdateRemoveStageCompleteInput updateRemoveStageCompleteInput) throws UpdateTeamException, RetrieveTeamException {
 		updateService.removeStageCompleted(updateRemoveStageCompleteInput);
 	}
-
+	
+	@RequestMapping("/update/addcomment")
+	public void updateAddComment(@RequestBody UpdateAddCommentInput updateAddCommentInput) throws UpdateTeamException, RetrieveTeamException {
+		updateService.updateAddComment(updateAddCommentInput);
+	}
 }

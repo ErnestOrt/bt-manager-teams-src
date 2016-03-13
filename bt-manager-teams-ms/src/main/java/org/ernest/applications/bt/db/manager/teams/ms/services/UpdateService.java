@@ -1,5 +1,6 @@
 package org.ernest.applications.bt.db.manager.teams.ms.services;
 
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddCommentInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
@@ -19,5 +20,7 @@ public interface UpdateService {
 	void addStageCompleted(UpdateAddStageCompletedInput updateAddStageCompletedInput) throws UpdateTeamException, RetrieveTeamException;
 
 	void removeStageCompleted(UpdateRemoveStageCompleteInput updateRemoveStageCompleteInput) throws UpdateTeamException, RetrieveTeamException;
+
+	void updateAddComment(UpdateAddCommentInput updateAddCommentInput) throws RetrieveTeamException, UpdateTeamException;
 
 }

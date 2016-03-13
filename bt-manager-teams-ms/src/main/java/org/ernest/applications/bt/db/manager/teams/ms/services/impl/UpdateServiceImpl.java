@@ -1,5 +1,8 @@
 package org.ernest.applications.bt.db.manager.teams.ms.services.impl;
 
+import java.util.ArrayList;
+
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddCommentInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
@@ -52,6 +55,14 @@ public class UpdateServiceImpl implements UpdateService {
 	public void removeStageCompleted(UpdateRemoveStageCompleteInput updateRemoveStageCompleteInput) throws UpdateTeamException, RetrieveTeamException {
 		Team team = crudService.retrieve(updateRemoveStageCompleteInput.getTeamId());
 		team.getStagesCompletedIds().remove(updateRemoveStageCompleteInput.getStageId());
+		crudService.update(team);
+	}
+
+	@Override
+	public void updateAddComment(UpdateAddCommentInput updateAddCommentInput) throws RetrieveTeamException, UpdateTeamException {
+		Team team = crudService.retrieve(updateAddCommentInput.getTeamId());
+		if(team.getCommentIds() == null) team.setCommentIds(new ArrayList<String>());
+		team.getCommentIds().add(updateAddCommentInput.getCommentId());
 		crudService.update(team);
 	}
 }

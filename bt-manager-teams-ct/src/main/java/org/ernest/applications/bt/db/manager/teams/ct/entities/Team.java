@@ -1,6 +1,8 @@
 package org.ernest.applications.bt.db.manager.teams.ct.entities;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Team {
@@ -11,10 +13,12 @@ public class Team {
 	private String name;
 	private Set<String> membersIds;
 	private Set<String> stagesCompletedIds;
+	private List<String> commentIds;
 	
 	public Team(){
 		membersIds = new HashSet<String>();
 		stagesCompletedIds = new HashSet<String>();
+		commentIds = new ArrayList<String>();
 	}
 	
 	public String get_id() {
@@ -46,5 +50,11 @@ public class Team {
 	}
 	public void setStagesCompletedIds(Set<String> stagesCompletedIds) {
 		this.stagesCompletedIds = stagesCompletedIds;
-	} 
+	}
+	public List<String> getCommentIds() {
+		return commentIds;
+	}
+	public void setCommentIds(List<String> commentIds) {
+		this.commentIds = commentIds;
+	}
 }
