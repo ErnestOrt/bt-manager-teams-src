@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddCommentInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddMemberInput;
+import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddNoticeInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateAddStageCompletedInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateNameInput;
 import org.ernest.applications.bt.db.manager.teams.ct.UpdateRemoveMemberInput;
@@ -64,5 +65,14 @@ public class UpdateServiceImpl implements UpdateService {
 		if(team.getCommentIds() == null) team.setCommentIds(new ArrayList<String>());
 		team.getCommentIds().add(updateAddCommentInput.getCommentId());
 		crudService.update(team);
+	}
+
+	@Override
+	public void addNotice(UpdateAddNoticeInput updateAddNoticeInput) throws RetrieveTeamException, UpdateTeamException{
+		Team team = crudService.retrieve(updateAddNoticeInput.getTeamId());
+		if(team.getNoticeIds() == null) team.setNoticeIds(new ArrayList<String>());
+		team.getNoticeIds().add(updateAddNoticeInput.getNoticeId());
+		crudService.update(team);
+		
 	}
 }

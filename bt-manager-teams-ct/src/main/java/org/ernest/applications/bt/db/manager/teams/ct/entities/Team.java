@@ -14,13 +14,15 @@ public class Team {
 	private Set<String> membersIds;
 	private Set<String> stagesCompletedIds;
 	private List<String> commentIds;
+	private List<String> noticeIds;
 	
 	public Team(){
 		membersIds = new HashSet<String>();
 		stagesCompletedIds = new HashSet<String>();
 		commentIds = new ArrayList<String>();
+		noticeIds = new ArrayList<String>();
 	}
-	
+
 	public String get_id() {
 		return _id;
 	}
@@ -56,5 +58,12 @@ public class Team {
 	}
 	public void setCommentIds(List<String> commentIds) {
 		this.commentIds = commentIds;
+	}
+	public List<String> getNoticeIds() {
+		return noticeIds;
+	}
+
+	public void setNoticeIds(List<String> noticeIds) {
+		this.noticeIds = noticeIds;
 	}
 }
